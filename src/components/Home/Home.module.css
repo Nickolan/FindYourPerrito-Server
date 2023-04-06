@@ -1,0 +1,153 @@
+.content{
+    /* background: url("../../images/BackGround.png");  */
+    background-image: url('../../images/Perrito.png');
+    background-color: #f69c4c;
+
+    background-size: 100vw;
+    background-attachment: fixed;
+    width: 99vw;
+    height: 98.1vh;
+    border: 10px black solid;
+    background-repeat: no-repeat;
+}
+.page{
+    border: 5px solid black;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 15px 0px 20px 0px;
+}
+.pageNumbers{
+    position: relative;
+    height: 70px;
+    width: 30px;
+    font-size: 20px;
+    margin: 5px 6px 5px 6px;
+    border: 2px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    transition: .2s;
+}
+.pageNumbers:hover{
+    transform: scale(1.2);
+    color: whitesmoke;
+    background-color: black;
+}
+.navButton{
+    background: none;
+    border: none;
+}
+.exitImg{
+    border: 2px solid black;
+    border-radius: 100%;
+    width: 3vw;
+    position: relative;
+    background-color: rgb(61, 30, 0);
+    transition: .2s;
+    margin-left: 5px;
+}
+.exitImg:hover{
+    transform: scale(1.3);
+}
+.create{
+    width: 8vw;
+    margin-left: 5em;
+    transition: .5s;
+}
+.create:hover{
+    
+    transform: scale(1.1);
+}
+.loading{
+    position: absolute;
+    display: flex;
+    margin-left: 35vw;
+    width: 35em;
+}
+.homeNav{
+    display: flex;
+    border-bottom: 5px solid rgb(0, 0, 0);
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    background-color: #a17344;
+}
+.allFilters{
+    display: flex;
+    justify-content: start;
+    border: 3px solid black;
+    background-color: #f4c494;
+}
+.temps{
+    width: 30em;
+    height: 12em;
+    text-align: center;
+    background-color: #cccea7;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+}
+.tempsOps{
+    border-bottom: 1px solid black;
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
+    
+}.tempsOps:hover{
+    background-color: rgba(0, 0, 0, 0.365);
+    cursor: pointer;
+}
+.prev{
+    position: relative;
+    margin: 0em 1em 0em 0em;
+    cursor: pointer;
+    background-color: white;
+    font-size: 1.5em;
+}   
+.next{
+    position: relative;
+    margin: 0 0 0 1em;
+    cursor: pointer;
+    background-color: white;
+    font-size: 1.5em;
+}
+.prev:active{
+    color: white;
+    background-color: black;
+}
+.next:active{
+    color: white;
+    background-color: black;
+}
+.actualPage{
+    display: inline-flex;
+    position: fixed;
+    font-size: 6em;
+    margin-left: 47vw;
+    margin-top: 2vh;
+}
+.filtersTitle{
+    color: rgb(255, 255, 255);
+    background-color: #9f945d;
+    font-size: 1rem;
+    border-bottom: 3px solid black;
+}
+.Order{
+    display: flex;
+    flex-direction: row;
+    height: 7.2em;
+    width: 10em;
+    text-align: center;
+    background-color: #cccea7;
+}
+.orderTable{
+    margin-left: 60vw;
+}
+.reset{
+    margin: 5em 0em 0em 3em;
+    width: 4vw;
+    height: 5vh;
+    background-color: white;
+    transition: .1s;
+}
+.reset:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}

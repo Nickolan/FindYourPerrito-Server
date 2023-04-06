@@ -1,0 +1,15 @@
+.cards{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    grid-template-rows: 26vh 26vh;
+    column-gap: 5vw;
+    row-gap: 2vh;
+}
+.No{
+    position: absolute;
+    margin: 6em 0em 0em 34vw;
+    display: block;
+    align-content: center;
+    font-size: 1.5em;
+}

@@ -1,0 +1,23 @@
+.allBar{
+    display: flex;
+    margin-right: 1em;
+    align-items: center;
+    border: 2px black solid;
+    background-color: #68563e;
+}
+.searchBar{
+    width: 7vw;
+    height: 3vh;
+    background-color: #433829;
+    color: white;
+}
+.button{
+    background: none;
+    border: none;
+    font-size: 2rem;
+    transition: .2s;
+}
+.button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}

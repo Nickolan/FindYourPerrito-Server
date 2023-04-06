@@ -1,0 +1,30 @@
+.contain{
+    background: url("../../images/BackGround.png");
+    background-size: 100vw;
+    background-attachment: fixed;
+    width: 99vw;
+    height: 98.1vh;
+    border: 10px black solid;
+    background-repeat: no-repeat;
+}
+.img{
+    width: 25vw;
+    height: 35vh;
+    border: 8px solid rgb(104, 61, 5);
+    
+    box-shadow: 1px 5px 5px black;
+}
+.details{
+    background-color: rgb(240, 248, 255);
+    background-image: url('../../images/backpath.png');
+    background-size: 4em;
+    backface-visibility: hidden;
+    margin: 1vw 30vw 0 30vw;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    text-shadow: 2px 2px 2px whitesmoke;
+    border: 5px solid black;
+    height: 47vh;
+    font-size: 1vw;
+}

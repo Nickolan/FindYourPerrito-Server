@@ -1,0 +1,30 @@
+.marco{
+    border: 5px solid rgb(154, 80, 2);
+    display: flex;
+    box-shadow: 5px 5px 5px black;
+    flex-direction: column;
+    font-size: 10px;
+    background-color: aliceblue;
+    transition: .2s;
+}
+.marco:hover{
+    transform: scale(1.1);
+}
+.foto{
+    border: 6px solid rgb(65, 40, 0);
+    border-radius: 50%;
+    width: 8vw;
+    height: 10vh;
+}
+.collar{
+    position: relative;
+    bottom: 20em;
+    width: 15vw;
+}
+.letters{
+    background-color: rgba(0, 0, 0, 0.262);
+    text-shadow: 1px 2px 2px black;
+    color: white;
+    height: 35px;
+    font-size: 14px;
+}
