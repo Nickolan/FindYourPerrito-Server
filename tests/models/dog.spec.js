@@ -1,0 +1,27 @@
+const { Dog, conn } = require('../../src/db.js');
+const { expect } = require('chai');
+
+describe('Dog model', () => {
+  before(() => conn.authenticate()
+    .catch((err) => {
+      console.error('Unable to connect to the database:', err);
+    }));
+  describe('Validators', () => {
+    beforeEach(() => Dog.sync({ force: true }));
+    describe('name', () => {
+      it('should throw an error if name is null', (done) => {
+        Dog.create({})
+          .then(() => done(new Error('It requires a valid name')))
+          .catch(() => done());
+      });
+      it('should work when its a valid name', () => {
+        Dog.create({ name: 'Pug' });
+      });
+      it('Debe arrojar un error si el nombre tiene mas de 15 characteres', (done) => {
+        Dog.create({ name: 'Supercalifragilistico'})
+        .then(() => done(new Error('El nombre es muy largo')))
+        .catch(() => done());
+      })
+    });
+  });
+});

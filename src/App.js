@@ -1,39 +1,35 @@
-import './App.css';
-import React, { useState } from 'react'
-import { Routes, Route } from 'react-router-dom';
-import Landing from './components/Landing/Landing';
-import Detail from './components/Detail/Detail';
-import Home from './components/Home/Home'
-import Form from './components/Form/Form';
-import sound from './images/ladrido.mp3'
-import backcry from './images/perrocry.mp3'
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const routes = require('./routes/index.js');
 
-function App() {
+require('./db.js');
 
-  var sonido = new Audio()
-  sonido.src = sound;
+const server = express();
 
-  var cry = new Audio();
-  cry.src = backcry;
+server.name = 'API';
 
-  const play = () => {
-    sonido.play();
-  }
+server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
+server.use(bodyParser.json({ limit: '50mb' }));
+server.use(cookieParser());
+server.use(morgan('dev'));
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 
-  const back = () => {
-    cry.play();
-  }
+server.use('/', routes);
 
-  return (
-    <div className={"App"}>
-      <Routes>
-        <Route path='/' element={<Landing play={play} />}/>
-        <Route path='/detail/:id' element={<Detail/>}/>
-        <Route path='/home' element={<Home/>} />
-        <Route path='/create' element={<Form back={back} play={play}/>}/>
-      </Routes>
-    </div>
-  );
-}
+// Error catching endware.
+server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  const status = err.status || 500;
+  const message = err.message || err;
+  console.error(err);
+  res.status(status).send(message);
+});
 
-export default App;
+module.exports = server;
